@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#07152f">
+  <meta name="description" content="GUSOFT Sistemas e Informática — soluções em software, informática, manutenção de computadores e redes.">
+
+  <title>GUSOFT Sistemas e Informática</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --navy: #07152f;
+      --navy-2: #0b1f43;
+      --blue: #087cff;
+      --blue-2: #18a0ff;
+      --cyan: #19c6ff;
+      --text: #13213a;
+      --muted: #64748b;
+      --bg: #f6f9fd;
+      --white: #fff;
+      --line: #e5ebf4;
+      --shadow: 0 18px 55px rgba(7, 21, 47, .12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 5%, rgba(24,160,255,.08), transparent 28%),
+        radial-gradient(circle at 90% 8%, rgba(8,124,255,.07), transparent 25%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAV
+    ========================= */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229,235,244,.85);
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .nav-logo img {
+      width: 155px;
+      height: 65px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      color: #263752;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+      border-radius: 999px;
+      color: #fff !important;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 8px 22px rgba(8,124,255,.22);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 25px;
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+    .hero {
+      padding: 78px 0 70px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #e8f4ff;
+      color: #056bd8;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.06;
+      margin: 0 0 22px;
+      letter-spacing: -2px;
+      color: var(--navy);
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 21px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 12px 28px rgba(8,124,255,.24);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--navy);
+      box-shadow: 0 8px 25px rgba(7,21,47,.06);
+    }
+
+    .btn-whatsapp {
+      background: #16a34a;
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(22,163,74,.2);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #52627b;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-note i {
+      color: #16a34a;
+    }
+
+    .hero-logo-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-logo-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -80px;
+      top: -90px;
+      background: rgba(24,160,255,.12);
+      border-radius: 50%;
+    }
+
+    .hero-logo-card img {
+      width: 100%;
+      max-height: 490px;
+      object-fit: contain;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 42px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-family: "Manrope", Arial, sans-serif;
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* =========================
+       SOLUÇÕES
+    ========================= */
+    .solutions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .solution-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 12px 40px rgba(7,21,47,.07);
+      display: flex;
+      flex-direction: column;
+      transition: .25s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .solution-card::after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .solution-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #eaf5ff;
+      color: var(--blue);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .solution-card h3 {
+      font-size: 25px;
+      margin: 0 0 7px;
+      color: var(--navy);
+    }
+
+    .solution-card .tag {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 13px;
+    }
+
+    .solution-card p {
+      color: var(--muted);
+      margin: 0 0 23px;
+    }
+
+    .solution-card .btn {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    /* =========================
+       SERVIÇOS
+    ========================= */
+    .services {
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 20px;
+    }
+
+    .service-icon {
+      color: var(--blue);
+      font-size: 26px;
+      margin-bottom: 13px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin: 0 0 7px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* =========================
+       PRODUTOS
+    ========================= */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(7,21,47,.06);
+    }
+
+    .product-image {
+      height: 190px;
+      background: #edf3fa;
+      display: grid;
+      place-items: center;
+      color: #7890aa;
+      font-size: 42px;
+    }
+
+    .product-image i {
+      opacity: .65;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-content h3 {
+      margin: 0 0 6px;
+      color: var(--navy);
+    }
+
+    .product-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 15px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      color: #087cff;
+      background: #eaf5ff;
+      border-radius: 999px;
+      padding: 5px 9px;
+      margin-bottom: 10px;
+    }
+
+    .products-note {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SOBRE
+    ========================= */
+    .about {
+      background: linear-gradient(135deg, #07152f, #0b1f43);
+      color: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about .section-kicker {
+      color: #59c8ff;
+    }
+
+    .about h2 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      margin: 0 0 17px;
+    }
+
+    .about p {
+      color: #c5d2e6;
+      margin: 0 0 18px;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .about-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #dce8f7;
+    }
+
+    .about-item i {
+      color: #4fc3ff;
+      margin-top: 5px;
+    }
+
+    .about-box {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 25px;
+      padding: 30px;
+    }
+
+    .about-box h3 {
+      margin: 0 0 15px;
+      font-size: 22px;
+    }
+
+    /* =========================
+       CONTATO
+    ========================= */
+    .cta-box {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(24,160,255,.22), transparent 30%),
+        linear-gradient(135deg, #07152f, #0c2b59);
+      border-radius: 28px;
+      padding: 52px;
+      color: #fff;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      margin: 0 auto 14px;
+      max-width: 780px;
+    }
+
+    .cta-box p {
+      color: #c5d2e6;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer {
+      background: #050f22;
+      color: #fff;
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand img {
+      width: 210px;
+      height: 105px;
+      object-fit: contain;
+      object-position: left center;
+      background: #fff;
+      border-radius: 12px;
+      padding: 5px;
+    }
+
+    .footer-brand p {
+      color: #9fb0c9;
+      max-width: 340px;
+      font-size: 14px;
+    }
+
+    footer h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 7px;
+    }
+
+    footer li,
+    footer a {
+      color: #9fb0c9;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.09);
+      padding-top: 20px;
+      color: #71839e;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      background: #16a34a;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      z-index: 1100;
+      transition: .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.04);
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero-logo-card {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 26px, 1160px);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 18px 20px 24px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 15px 30px rgba(0,0,0,.08);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .solutions,
+      .products,
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .hero {
+        padding: 42px 0 55px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cta-box {
+        padding: 35px 22px;
+      }
+
+      .nav-logo img {
+        width: 135px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       MENU
+  ========================= -->
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <a class="nav-logo" href="#inicio" aria-label="GUSOFT">
+          <img src="logo-gusoft.jpeg" alt="GUSOFT Sistemas e Informática">
+        </a>
+
+        <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Abrir menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#inicio">Início</a>
+          <a href="#sistemas">Sistemas</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#empresa">A GUSOFT</a>
+          <a href="#contato" class="nav-button">Contato</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+  <header class="hero" id="inicio">
+    <div class="container hero-grid">
+
+      <div>
+        <span class="eyebrow">
+          <i class="fas fa-laptop-code"></i>
+          GUSOFT Sistemas e Informática
+        </span>
+
+        <h1>
+          Tecnologia para
+          <span>facilitar</span>
+          o seu dia a dia.
+        </h1>
+
+        <p>
+          Soluções em software, informática, manutenção de computadores
+          e redes para pessoas, empresas e organizações.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#sistemas">
+            <i class="fas fa-cubes"></i>
+            Conheça nossas soluções
+          </a>
+
+          <a class="btn btn-whatsapp"
+             href="https://wa.me/5516988643064?text=Olá!%20Gostaria%20de%20conhecer%20a%20GUSOFT%20Sistemas%20e%20Informática."
+             target="_blank"
+             rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            Falar pelo WhatsApp
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <i class="fas fa-circle-check"></i>
+          Atendimento direto pelo WhatsApp.
+        </div>
+      </div>
+
+      <div class="hero-logo-card">
+        <img src="logo-gusoft.jpeg" alt="Logo da GUSOFT Sistemas e Informática">
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       SISTEMAS
+  ========================= -->
+  <section id="sistemas">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-kicker">Nossas soluções</span>
+        <h2>Sistemas desenvolvidos pela GUSOFT</h2>
+        <p>
+          Soluções pensadas para necessidades específicas, com foco em
+          simplicidade, organização e facilidade de uso.
+        </p>
+      </div>
+
+      <div class="solutions">
+
+        <article class="solution-card">
+          <div class="solution-icon">
+            <i class="fas fa-church"></i>
+          </div>
+
+          <span class="tag">Gestão para Igrejas</span>
+
+          <h3>IgPlus</h3>
+
+          <p>
+            Sistema de gestão para igrejas, desenvolvido para auxiliar
+            no controle de membros, visitantes, funções, relatórios
+            e outras informações da organização.
+          </p>
+
+          <a class="btn btn-primary"
+             href="https://gusoftjardel.github.io/IgPlus/"
+             target="_blank"
+             rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+            Conhecer o IgPlus
+          </a>
+        </article>
+
+
+        <article class="solution-card">
+          <div class="solution-icon">
+            <i class="fas fa-helmet-safety"></i>
+          </div>
+
+          <span class="tag">Gestão de EPI</span>
+
+          <h3>EpiPlus</h3>
+
+          <p>
+            Sistema para empresas e indústrias que precisam organizar
+            funcionários, empresas, EPIs, estoque e registros de
+            entrega e retirada.
+          </p>
+
+          <a class="btn btn-primary"
+             href="https://gusoftjardel.github.io/EpiPlus/"
+             target="_blank"
+             rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+            Conhecer o EpiPlus
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       SERVIÇOS
+  ========================= -->
+  <section class="services" id="servicos">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-kicker">O que fazemos</span>
+        <h2>Soluções em tecnologia e informática</h2>
+        <p>
+          Além dos nossos sistemas, a GUSOFT também atua com serviços
+          e soluções de informática.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Desenvolvimento de Sistemas</h3>
+          <p>
+            Desenvolvimento de soluções de software para diferentes necessidades.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-screwdriver-wrench"></i>
+          </div>
+          <h3>Manutenção de Computadores</h3>
+          <p>
+            Serviços de manutenção, configuração e suporte em informática.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3>Redes e Tecnologia</h3>
+          <p>
+            Auxílio em configuração e soluções relacionadas a redes e computadores.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Suporte</h3>
+          <p>
+            Atendimento para dúvidas, orientação e suporte aos nossos clientes.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       PRODUTOS USADOS
+  ========================= -->
+  <section id="produtos">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-kicker">Produtos e equipamentos</span>
+        <h2>Produtos disponíveis</h2>
+        <p>
+          Equipamentos e componentes disponíveis conforme nosso estoque.
+          Consulte disponibilidade e condições pelo WhatsApp.
+        </p>
+      </div>
+
+      <div class="products">
+
+        <!--
+          DUPLIQUE ESTE CARD QUANDO TIVER PRODUTOS PARA ANUNCIAR.
+          Depois podemos colocar a foto real, descrição e preço.
+        -->
+
+        <article class="product-card">
+          <div class="product-image">
+            <i class="fas fa-microchip"></i>
+          </div>
+
+          <div class="product-content">
+            <span class="product-tag">EM BREVE</span>
+            <h3>Componentes de informática</h3>
+            <p>
+              Placas, componentes e equipamentos disponíveis
+              conforme estoque.
+            </p>
+
+            <a class="btn btn-secondary"
+               href="https://wa.me/5516988643064?text=Olá!%20Gostaria%20de%20consultar%20os%20produtos%20de%20informática%20disponíveis."
+               target="_blank"
+               rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+
+        <article class="product-card">
+          <div class="product-image">
+            <i class="fas fa-desktop"></i>
+          </div>
+
+          <div class="product-content">
+            <span class="product-tag">USADOS</span>
+            <h3>Equipamentos usados</h3>
+            <p>
+              Equipamentos usados disponíveis para venda,
+              conforme disponibilidade.
+            </p>
+
+            <a class="btn btn-secondary"
+               href="https://wa.me/5516988643064?text=Olá!%20Gostaria%20de%20consultar%20os%20equipamentos%20usados%20disponíveis."
+               target="_blank"
+               rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+
+        <article class="product-card">
+          <div class="product-image">
+            <i class="fas fa-box-open"></i>
+          </div>
+
+          <div class="product-content">
+            <span class="product-tag">DISPONIBILIDADE</span>
+            <h3>Outros produtos</h3>
+            <p>
+              Consulte outros produtos e componentes que possam
+              estar disponíveis.
+            </p>
+
+            <a class="btn btn-secondary"
+               href="https://wa.me/5516988643064?text=Olá!%20Gostaria%20de%20saber%20quais%20outros%20produtos%20estão%20disponíveis."
+               target="_blank"
+               rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="products-note">
+        <i class="fas fa-circle-info"></i>
+        Os produtos usados são vendidos conforme disponibilidade e condição informada no atendimento.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       SOBRE A GUSOFT
+  ========================= -->
+  <section class="about" id="empresa">
+    <div class="container about-grid">
+
+      <div>
+        <span class="section-kicker">Sobre a empresa</span>
+
+        <h2>
+          Tecnologia desenvolvida pensando nas necessidades reais.
+        </h2>
+
+        <p>
+          A GUSOFT Sistemas e Informática trabalha com desenvolvimento
+          de sistemas, soluções em software e serviços de informática,
+          buscando tornar a tecnologia mais simples e acessível.
+        </p>
+
+        <p>
+          Nosso trabalho une desenvolvimento de software, informática
+          e atendimento próximo para criar soluções úteis para o dia a dia.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Por que escolher a GUSOFT?</h3>
+
+        <div class="about-list">
+
+          <div class="about-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Soluções práticas e fáceis de utilizar.</span>
+          </div>
+
+          <div class="about-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Desenvolvimento focado nas necessidades dos usuários.</span>
+          </div>
+
+          <div class="about-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Atendimento direto e próximo ao cliente.</span>
+          </div>
+
+          <div class="about-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Evolução constante dos nossos sistemas.</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CONTATO
+  ========================= -->
+  <section id="contato">
+    <div class="container">
+
+      <div class="cta-box">
+
+        <span class="section-kicker" style="color:#59c8ff;">
+          Fale conosco
+        </span>
+
+        <h2>
+          Precisa de uma solução em software ou informática?
+        </h2>
+
+        <p>
+          Entre em contato com a GUSOFT Sistemas e Informática.
+          Teremos prazer em conversar com você.
+        </p>
+
+        <div class="cta-actions">
+
+          <a class="btn btn-whatsapp"
+             href="https://wa.me/5516988643064?text=Olá!%20Gostaria%20de%20falar%20com%20a%20GUSOFT%20Sistemas%20e%20Informática."
+             target="_blank"
+             rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            (16) 98864-3064
+          </a>
+
+          <a class="btn btn-secondary" href="#sistemas">
+            <i class="fas fa-cubes"></i>
+            Conhecer os sistemas
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="logo-gusoft.jpeg" alt="GUSOFT Sistemas e Informática">
+          <p>
+            Soluções em software, informática, manutenção de computadores
+            e redes.
+          </p>
+        </div>
+
+        <div>
+          <h3>Sistemas</h3>
+          <ul>
+            <li>
+              <a href="https://gusoftjardel.github.io/IgPlus/" target="_blank" rel="noopener">
+                IgPlus — Gestão para Igrejas
+              </a>
+            </li>
+            <li>
+              <a href="https://gusoftjardel.github.io/EpiPlus/" target="_blank" rel="noopener">
+                EpiPlus — Gestão de EPI
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>
+              <a href="https://wa.me/5516988643064" target="_blank" rel="noopener">
+                WhatsApp: (16) 98864-3064
+              </a>
+            </li>
+            <li>Somente WhatsApp</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        GUSOFT Sistemas e Informática © 2026 — Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a class="whatsapp-float"
+     href="https://wa.me/5516988643064?text=Olá!%20Gostaria%20de%20conhecer%20a%20GUSOFT."
+     target="_blank"
+     rel="noopener"
+     aria-label="Falar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        document.getElementById("navLinks").classList.remove("open");
+      });
+    });
+  </script>
+
+</body>
+</html>
