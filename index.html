@@ -302,7 +302,7 @@
     ========================= */
     .solutions {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 25px;
     }
 
@@ -662,6 +662,10 @@
         grid-template-columns: 1fr;
       }
 
+      .solutions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .hero {
         padding-top: 50px;
       }
@@ -893,6 +897,30 @@
              rel="noopener">
             <i class="fas fa-arrow-up-right-from-square"></i>
             Conhecer o EpiPlus
+          </a>
+        </article>
+
+        <article class="solution-card">
+          <div class="solution-icon" style="background:#e7f9ef;color:#16a765;">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+
+          <span class="tag" style="color:#16a765;">Atendimento via WhatsApp</span>
+
+          <h3>ZapPlus</h3>
+
+          <p>
+            Solução de atendimento para empresas que desejam organizar conversas,
+            direcionar solicitações por setor e avaliar automações com implantação
+            e suporte da GUSOFT.
+          </p>
+
+          <a class="btn btn-primary"
+             href="https://gusoftjardel.github.io/ZapPlus/"
+             target="_blank"
+             rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+            Conhecer o ZapPlus
           </a>
         </article>
 
